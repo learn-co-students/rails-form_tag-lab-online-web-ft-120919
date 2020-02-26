@@ -1,6 +1,9 @@
 <h3>Student Form</h3>
-<% if @student %>
+<!--<%=@student.first_name%>
+<%=@student.last_name%>-->
+
     <%= form_tag students_path do %>
+
       <label for="student[first_name]">First Name:</label><br> 
       <%= text_field_tag :'student[first_name]', @student.first_name %><br><br>
 
@@ -9,14 +12,5 @@
 
       <%= submit_tag "Submit Student" %>
     <% end %>
-<% else %>
-    <%= form_tag students_path do %>
-      <label for="student[first_name]">First Name:</label><br> 
-      <%= text_field_tag :'student[first_name]' %><br><br>
 
-      <label for="student[last_name]">Last Name:</label><br> 
-      <%= text_field_tag :'student[last_name]' %><br><br>
-
-      <%= submit_tag "Submit Student" %>
-    <% end %>
-<% end %>
+<%= session[:form_params] if session[:form_params] %>
