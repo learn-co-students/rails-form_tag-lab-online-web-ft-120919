@@ -3,3 +3,13 @@
     <div><%= link_to student.to_s, student_path(student) %></div>
   <% end %>
 </div>
+
+<div>
+<form action="<%= new_student_path %>" method="POST">
+</form >
+
+</div>
+
+<%= form_tag new_student_path do %>
+<label>Title</label>
+ <% end %>
